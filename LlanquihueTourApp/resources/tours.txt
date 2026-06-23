@@ -1,0 +1,5 @@
+Ruta Gastronomica Llanquihue;Gastronómico;25000
+Paseo Lacustre en Bote;Lacustre;15000
+Excursion Cultural Colonos;Cultural;18000
+Tour Gastronomico Ancestral;Gastronómico;35000
+Aventura Saltos del Petrohue;Aventura;40000

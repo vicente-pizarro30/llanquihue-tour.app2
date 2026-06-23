@@ -1,0 +1,5 @@
+12345678-9;Carlos Mendoza;Guía;45000
+19876543-2;Ana María Silva;Operador;60000
+15666777-K;Juan Pablo Duarte;Transporte;75000
+14222333-4;Patricia Toledo;Guía;50000
+18555444-3;Diego Sanhueza;Operador;55000
