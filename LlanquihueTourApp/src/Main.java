@@ -1,30 +1,21 @@
-package app;
-import model.Empleado;
-import service.EmpleadoService;
-import util.LectorArchivo;
-import java.util.ArrayList;
+package ui;
+
+import data.GestorServicios;
+import model.ServicioTuristico;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=============================================");
-        System.out.println("  SISTEMA DE GESTIÓN MODULAR - LLANQUIHUE TOUR ");
-        System.out.println("=============================================\n");
+        System.out.println("=== CATÁLOGO DE SERVICIOS - LLANQUIHUE TOUR ===\n");
 
-        // 1. Inicializar la herramienta de lectura utilitaria
-        LectorArchivo lector = new LectorArchivo();
-        String rutaArchivo = "resources/colaboradores.txt";
+        // Instanciamos el gestor
+        GestorServicios gestor = new GestorServicios();
 
-        // 2. Cargar datos dinámicamente resguardado por try-catch interno
-        ArrayList<Empleado> listaCargada = lector.leerArchivoColaboradores(rutaArchivo);
+        // Llamamos al método y guardamos los servicios generados
+        ServicioTuristico[] listaServicios = gestor.crearServiciosPrueba();
 
-        // 3. Pasar la colección cargada al módulo de servicios corporativos
-        EmpleadoService servicio = new EmpleadoService(listaCargada);
-
-        // 4. Ejecución de operaciones automatizadas solicitadas
-        System.out.println("--- DESPLIEGUE COMPLETO DE PERSONAL ---");
-        servicio.mostrarCatalogoCompleto();
-
-        // 5. Aplicación de filtros específicos
-        servicio.buscarPorCargo("Guía");
+        // Mostramos los objetos por consola (aplicando Polimorfismo y toString)
+        for (ServicioTuristico servicio : listaServicios) {
+            System.out.println(servicio.toString());
+        }
     }
 }
