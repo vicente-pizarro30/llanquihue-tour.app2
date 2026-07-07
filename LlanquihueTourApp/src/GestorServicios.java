@@ -5,24 +5,23 @@ import model.PaseoLacustre;
 import model.RutaGastronomica;
 import model.ServicioTuristico;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GestorServicios {
 
-    // Método que crea 2 instancias de cada subclase y las retorna en un arreglo
-    public ServicioTuristico[] crearServiciosPrueba() {
-        ServicioTuristico[] servicios = new ServicioTuristico[6];
+    // Ahora retorna un List en lugar de un arreglo
+    public List<ServicioTuristico> crearServiciosPrueba() {
+        // Declaramos la colección de tipo List
+        List<ServicioTuristico> listaDeServicios = new ArrayList<>();
 
-        // 2 Rutas Gastronómicas
-        servicios[0] = new RutaGastronomica("Ruta del Salmón", 4, 3);
-        servicios[1] = new RutaGastronomica("Sabores de Chiloé", 6, 5);
+        // Cargamos al menos 5 objetos combinando subclases usando el método add()
+        listaDeServicios.add(new RutaGastronomica("Ruta del Salmón", 4, 3));
+        listaDeServicios.add(new RutaGastronomica("Sabores de Chiloé", 6, 5));
+        listaDeServicios.add(new PaseoLacustre("Navegación Todos los Santos", 3, "Catamarán"));
+        listaDeServicios.add(new PaseoLacustre("Tour Volcán Osorno", 2, "Lancha Rápida"));
+        listaDeServicios.add(new ExcursionCultural("Colonos Alemanes", 5, "Museo Colonial"));
 
-        // 2 Paseos Lacustres
-        servicios[2] = new PaseoLacustre("Navegación Todos los Santos", 3, "Catamarán");
-        servicios[3] = new PaseoLacustre("Tour Volcán Osorno", 2, "Lancha Rápida");
-
-        // 2 Excursiones Culturales
-        servicios[4] = new ExcursionCultural("Colonos Alemanes", 5, "Museo Colonial");
-        servicios[5] = new ExcursionCultural("Mitología Chilota", 4, "Iglesias de Madera");
-
-        return servicios;
+        return listaDeServicios;
     }
 }

@@ -8,11 +8,9 @@ public class ExcursionCultural extends ServicioTuristico {
         this.lugarHistorico = lugarHistorico;
     }
 
-    public String getLugarHistorico() { return lugarHistorico; }
-    public void setLugarHistorico(String lugarHistorico) { this.lugarHistorico = lugarHistorico; }
-
+    // Sobrescritura del método
     @Override
-    public String toString() {
-        return super.toString() + " | Lugar Histórico: " + lugarHistorico;
+    public void mostrarInformacion() {
+        System.out.println("[Excursión Cultural] " + getNombre() + " | Duración: " + getDuracionHoras() + " hrs | Lugar Histórico: " + lugarHistorico);
     }
 }

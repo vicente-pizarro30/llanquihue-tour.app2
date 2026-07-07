@@ -1,22 +1,10 @@
-# Llanquihue Tour App - Semana 6
+# Llanquihue Tour App - Semana 7
 
-## Objetivo de la semana
-El propósito de esta etapa es modelar e implementar una jerarquía de clases utilizando el concepto de Herencia Simple. Se busca reutilizar código agrupando los atributos comunes en una clase base y especializando características propias en sus clases derivadas, sobrescribiendo los métodos correspondientes.
+## Descripción de lo desarrollado en esta semana
+En esta etapa del proyecto se integraron colecciones genéricas (`List` y `ArrayList`) para almacenar de forma dinámica los distintos servicios turísticos de la agencia. Además, se aplicó el principio de **Polimorfismo**, incorporando el método `mostrarInformacion()` en la superclase `ServicioTuristico` y sobrescribiéndolo (`@Override`) en las subclases `RutaGastronomica`, `PaseoLacustre` y `ExcursionCultural`. Esto permite recorrer la lista mediante una referencia de la superclase y que cada objeto ejecute su comportamiento específico.
 
-## Clases Creadas
-El proyecto se organizó en 3 paquetes:
-- **`model`**: 
-  - `ServicioTuristico` (Superclase con atributos comunes).
-  - `RutaGastronomica` (Subclase).
-  - `PaseoLacustre` (Subclase).
-  - `ExcursionCultural` (Subclase).
-- **`data`**: 
-  - `GestorServicios` (Clase encargada de instanciar objetos de prueba).
-- **`ui`**: 
-  - `Main` (Clase principal de ejecución).
-
-## Instrucciones para ejecutar
-1. Abrir el proyecto en IntelliJ IDEA.
-2. Navegar al paquete `ui/` y abrir el archivo `Main.java`.
-3. Ejecutar el código presionando el botón "Run" (triángulo verde).
-4. La consola imprimirá los 6 servicios turísticos (2 de cada categoría) haciendo uso del método `toString()` sobrescrito.
+## Instrucciones para compilar y ejecutar el sistema
+1. Abra el proyecto en IntelliJ IDEA.
+2. Navegue al paquete `ui/` y ubique el archivo `Main.java`.
+3. Ejecute la clase principal presionando "Run" (el ícono del triángulo verde).
+4. En la consola se desplegará el catálogo completo de servicios. El bucle `for-each` recorrerá la lista y ejecutará el método `mostrarInformacion()` de forma polimórfica, mostrando los atributos específicos de cada tipo de servicio turístico.rito.

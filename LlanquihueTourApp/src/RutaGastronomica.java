@@ -4,16 +4,13 @@ public class RutaGastronomica extends ServicioTuristico {
     private int numeroDeParadas;
 
     public RutaGastronomica(String nombre, int duracionHoras, int numeroDeParadas) {
-        super(nombre, duracionHoras); // Llama al constructor del padre
+        super(nombre, duracionHoras);
         this.numeroDeParadas = numeroDeParadas;
     }
 
-    public int getNumeroDeParadas() { return numeroDeParadas; }
-    public void setNumeroDeParadas(int numeroDeParadas) { this.numeroDeParadas = numeroDeParadas; }
-
+    // Sobrescritura del método
     @Override
-    public String toString() {
-        // Aprovechamos el toString del padre y le sumamos lo propio de esta clase
-        return super.toString() + " | Paradas: " + numeroDeParadas;
+    public void mostrarInformacion() {
+        System.out.println("[Ruta Gastronómica] " + getNombre() + " | Duración: " + getDuracionHoras() + " hrs | Paradas: " + numeroDeParadas);
     }
 }

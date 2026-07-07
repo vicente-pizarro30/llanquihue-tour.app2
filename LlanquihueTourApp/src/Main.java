@@ -3,19 +3,21 @@ package ui;
 import data.GestorServicios;
 import model.ServicioTuristico;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=== CATÁLOGO DE SERVICIOS - LLANQUIHUE TOUR ===\n");
+        System.out.println("=== CATÁLOGO DINÁMICO DE SERVICIOS - LLANQUIHUE TOUR ===\n");
 
-        // Instanciamos el gestor
         GestorServicios gestor = new GestorServicios();
 
-        // Llamamos al método y guardamos los servicios generados
-        ServicioTuristico[] listaServicios = gestor.crearServiciosPrueba();
+        // Obtenemos la colección
+        List<ServicioTuristico> lista = gestor.crearServiciosPrueba();
 
-        // Mostramos los objetos por consola (aplicando Polimorfismo y toString)
-        for (ServicioTuristico servicio : listaServicios) {
-            System.out.println(servicio.toString());
+        // Recorremos con un for-each e invocamos el método polimórfico
+        for (ServicioTuristico servicio : lista) {
+            servicio.mostrarInformacion();
+            // ¡La magia del polimorfismo! Java sabe exactamente qué método imprimir según el tipo de hijo.
         }
     }
 }
