@@ -1,10 +1,19 @@
-# Llanquihue Tour App - Semana 7
+# Evaluación Final Transversal (EFT) - Llanquihue Tour
 
-## Descripción de lo desarrollado en esta semana
-En esta etapa del proyecto se integraron colecciones genéricas (`List` y `ArrayList`) para almacenar de forma dinámica los distintos servicios turísticos de la agencia. Además, se aplicó el principio de **Polimorfismo**, incorporando el método `mostrarInformacion()` en la superclase `ServicioTuristico` y sobrescribiéndolo (`@Override`) en las subclases `RutaGastronomica`, `PaseoLacustre` y `ExcursionCultural`. Esto permite recorrer la lista mediante una referencia de la superclase y que cada objeto ejecute su comportamiento específico.
+## Descripción General
+Prototipo de software orientado a objetos para la agencia de turismo "Llanquihue Tour". El sistema digitaliza la gestión de clientes y guías turísticos resolviendo problemáticas de datos aislados mediante un diseño modular, permitiendo la lectura de datos desde archivos de texto y la persistencia en memoria mediante colecciones.
 
-## Instrucciones para compilar y ejecutar el sistema
-1. Abra el proyecto en IntelliJ IDEA.
-2. Navegue al paquete `ui/` y ubique el archivo `Main.java`.
-3. Ejecute la clase principal presionando "Run" (el ícono del triángulo verde).
-4. En la consola se desplegará el catálogo completo de servicios. El bucle `for-each` recorrerá la lista y ejecutará el método `mostrarInformacion()` de forma polimórfica, mostrando los atributos específicos de cada tipo de servicio turístico.rito.
+## Características y Principios POO Aplicados
+- **Modularidad:** Código dividido en paquetes (`model`, `data`, `utils`, `app`).
+- **Encapsulamiento y Composición:** Atributos privados y clases que contienen otras (Ej: `Persona` contiene `Rut`).
+- **Manejo de Excepciones:** `RutInvalidoException` para validar integridad de datos.
+- **Herencia e Interfaces:** `Cliente` y `GuiaTuristico` heredan de `Persona` e implementan la interfaz `Registrable`.
+- **Colecciones y Polimorfismo:** Uso de `ArrayList<Registrable>` y filtrado dinámico mediante el operador `instanceof`.
+- **Lectura de Archivos:** Implementación de `BufferedReader` para poblar el sistema al iniciar mediante `datos.txt`.
+
+## Instrucciones de Ejecución
+1. Clonar el repositorio.
+2. Abrir el proyecto en IntelliJ IDEA o NetBeans.
+3. Asegurarse de que el archivo `datos.txt` esté ubicado en el directorio raíz del proyecto.
+4. Ejecutar la clase `app.Main.java`.
+5. Interactuar con los menús emergentes de Java Swing (JOptionPane).
